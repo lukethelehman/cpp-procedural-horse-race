@@ -4,7 +4,9 @@ CS-121 Horse race program done procedurally
 **algorithm**
 
 ```
-
+create constant for amount of horses
+create constant for length of track 
+create random integer from 0-1
 int main()
 
 	create array horses - initialize each value at zero 
@@ -18,8 +20,8 @@ int main()
 
 
 void advance(int horseNum, int* horses)
-	create int coin 
-	generate random number 0-1 and assign to coin 
+	create int coin
+	give int coin a random value 0-1 
 	if coin equals 0 
 		add 1 to horses[horseNum]
 
