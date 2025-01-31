@@ -14,8 +14,8 @@ int main(){
 	bool keepGoing = true;
 
 	while(keepGoing) {
-
-		for (int hn = 0; hn < NUM_HORSES; hn++){
+    
+	    for (int hn = 0; hn < NUM_HORSES; hn++){
             advance(hn,horses);
             if (isWinner(hn,horses)){
                 std::cout << "HORSE " << hn << " WINS!!!" << std::endl;
