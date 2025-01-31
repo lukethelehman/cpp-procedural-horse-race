@@ -16,14 +16,14 @@ int main(){
 	while(keepGoing) {
     
 	    for (int hn = 0; hn < NUM_HORSES; hn++){
-            advance(hn,horses);
-            if (isWinner(hn,horses)){
-                std::cout << "HORSE " << hn << " WINS!!!" << std::endl;
-                keepGoing = false;
-            }
-            else {
-            printLane(hn,horses);
-            }
+           	 advance(hn,horses);
+	         if (isWinner(hn,horses)){
+       	   	      std::cout << "HORSE " << hn << " WINS!!!" << std::endl;
+               		 keepGoing = false;
+           	 }
+           	 else {
+           		 printLane(hn,horses);
+          	  }
         }
         std::cout << "Press ENTER for another round";
         std::cin.ignore();        
