@@ -7,7 +7,7 @@ const int NUM_HORSES = 5;
 const int RACE_LENGTH = 15;
 void advance(int, int*);
 void printLane(int, int*);
-
+bool isWinner(int, int*);
 
 int main(){
 	int horses[5] = {0,0,0,0,0};
@@ -17,13 +17,19 @@ int main(){
 
 		for (int hn = 0; hn < NUM_HORSES; hn++){
             advance(hn,horses);
+            if (isWinner(hn,horses)){
+                std::cout << "HORSE " << hn << " WINS!!!" << std::endl;
+                keepGoing = false;
+            }
+            else {
             printLane(hn,horses);
             }
+        }
         std::cout << "Press ENTER for another round";
         std::cin.ignore();        
-        }
+        
     }
-
+}
 
 void advance(int hn,int* horses){
     int coin = dist(rd);
@@ -42,9 +48,16 @@ void printLane(int hn, int* horses){
             std::cout << ".";
         }
     }
-    std::cout << "" << std::endl;
+    std::cout << "" << std::endl;    
+}
 
-        
+bool isWinner(int hn, int* horses){
+    if (horses[hn] == 15){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 
