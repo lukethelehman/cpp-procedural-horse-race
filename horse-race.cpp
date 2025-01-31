@@ -27,7 +27,7 @@ int main(){
         }
         std::cout << "Press ENTER for another round";
         std::cin.ignore();        
-        
+
     }
 }
 
