@@ -15,7 +15,10 @@ int main()
 	while keepGoing 
 		for hn in range 4 add 1 to hn
 			advance(hn, horses)
-			printLane(hn, horses)
+            if isWinner is true
+                print "horse <hn> wins!
+            else
+			    printLane(hn, horses)
 	print "press enter for another turn"
 
 

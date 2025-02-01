@@ -1,0 +1,51 @@
+create constant for amount of horses
+create constant for length of track 
+create random integer from 0-1
+
+int main()
+    create string gambleChoice
+    create int horseChoice
+    create int wager
+    print "Do you want to bet on a horse to win? You'll double your money if it
+        wins, but lose it all if it loses (y/n)"
+    Store input into gambleChoice
+    if gambleChoice equals "y"
+        print "Pick a horse to bet on (0,1,2,3,4)"
+        get user input and store into horseChoice
+        print "How much money do you want to bet? (in dollars)"
+        store user input in wager 
+
+	create array horses - initialize each value at zero 
+	create bool keepGoing
+	
+	while keepGoing 
+		for hn in range 4 add 1 to hn
+			advance(hn, horses)
+            if isWinner is true
+                print "horse <hn> wins!"
+                if hn is equal to horseChoice
+                    print "Your horse wins! You get <wager times 2> dollars"
+                else 
+                    print "Your horse loses.. You lose all your money"
+                keepGoing equals false
+            else
+		    	printLane(hn, horses)
+	print "press enter for another turn"
+
+
+void advance(int horseNum, int* horses)
+	create int coin
+	give int coin a random value 0-1 
+	if coin equals 0 
+		add 1 to horses[horseNum]
+
+void printLane(int horseNum, int* horses)
+	for i in range 15, i increases by 1
+		if i = horses[horseNum)
+			print horseNum + 1
+		else
+			print "."
+
+bool isWinner(int horseNum, int* horses)
+	if horses[horseNum] is greater than or equal to 15
+		print "Horse <horseNum> wins!
