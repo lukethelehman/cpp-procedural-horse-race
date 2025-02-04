@@ -12,8 +12,11 @@ bool isWinner(int, int*);
 
 int main(){
     std::string gambleChoice;
-    int horseChoice;
+    int winner;
+    int horseChoice = 42;
     int wager;
+	int horses[5] = {0,0,0,0,0};
+	bool keepGoing = true;
 
     std::cout << "You're at a horse race." << std::endl;
     std::cout << "If you bet on a horse, you'll double your money if it wins" << std::endl;
@@ -28,24 +31,37 @@ int main(){
         std::cin >> wager;
     }
 
-	int horses[5] = {0,0,0,0,0};
-	bool keepGoing = true;
+    
+    std::cout << "enjoy the race!" << std::endl;
 
 	while(keepGoing) {
     
 	    for (int hn = 0; hn < NUM_HORSES; hn++){
            	 advance(hn,horses);
 	         if (isWinner(hn,horses)){
-       	   	      std::cout << "HORSE " << hn << " WINS!!!" << std::endl;
-               		 keepGoing = false;
+                winner = hn;
+       	   	    std::cout << "HORSE " << hn << " WINS!!!" << std::endl;
+               	    keepGoing = false;
            	 }
            	 else {
            		 printLane(hn,horses);
           	  }
         }
-        std::cout << "Press ENTER for another round";
-        std::cin.ignore();        
+        std::cout << "Press ENTER for another round" << std::endl;
+        std::cin.ignore(); 
+        std::cin.get();
 
+    }
+
+    if (winner == horseChoice){
+        std::cout << "Your horse won! You win " << (wager * 2) << " dollars!" << std::endl;
+    }
+
+    else if (horseChoice == 42) {
+         std::cout << "Great race!" << std::endl;
+            }
+    else {
+         std::cout << "Your horse did not win, you lose all of your money" << std::endl;
     }
 }
 
@@ -60,6 +76,7 @@ void printLane(int hn, int* horses){
     for (int i = 0; i < RACE_LENGTH; i++){
         if (i == horses[hn]){
             std::cout << hn;
+            
         }
         
         else {
